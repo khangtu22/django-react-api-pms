@@ -26,6 +26,9 @@ const useStyles = makeStyles((theme) => ({
     title: {
         flexGrow: 1,
     },
+    navBar: {
+        marginBottom: 20,
+    }
 }));
 
 function Nav() {
@@ -49,7 +52,7 @@ function Nav() {
     };
 
     return (
-        <div className="App">
+        <div className={classes.navBar}>
             <AppBar position="static">
                 <Toolbar>
                     <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
@@ -62,8 +65,22 @@ function Nav() {
                         {isAuth === true ? (
                             <Fragment>
                                 {' '}
-                                <Button to='/home'>Home</Button>
-                                {/*<Link to='/logout'>Logout</Link>*/}
+                                <Link to="/cars">
+                                    <Button type='button'>Car</Button>
+                                </Link>
+                                <Link to="/tickets">
+                                    <Button type='button'>Ticket</Button>
+                                </Link>
+                                <Link to="/trips">
+                                    <Button type='button'>Trip</Button>
+                                </Link>
+                                <Link to="/bookingoffices">
+                                    <Button type='button'>Booking Office</Button>
+                                </Link>
+                                <Link to="/parkinglots">
+                                    <Button type='button'>Parking Lot</Button>
+                                </Link>
+
                                 <Button onClick={handleClickOpen}>
                                     Logout
                                 </Button>
@@ -93,9 +110,13 @@ function Nav() {
                         ) : (
                             <Fragment>
                                 {' '}
-                                <Link to='/login'>Login</Link>
+                                <Link to='/login'>
+                                    <Button type='button'>Login</Button>
+                                </Link>
 
-                                <Link to='/signup'>Signup</Link>
+                                <Link to='/signup'>
+                                    <Button type='button'>Sign Up</Button>
+                                </Link>
                             </Fragment>
                         )}
                     </div>

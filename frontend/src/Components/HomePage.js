@@ -1,17 +1,16 @@
 import React from 'react';
-import Sidebar from "./Sidebar";
 import Grid from '@material-ui/core/Grid';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import {items} from "./helpers/Constants";
-import Ticket from "./Ticket";
-import Logout from "./auth/Logout";
-import Login from "./auth/Login";
-import Signup from "./auth/Signup";
-import BookingOffice from "./BookingOffice";
-import Car from "./Car";
-import ParkingLot from "./ParkingLot";
-import Trip from "./Trip";
+import Ticket from "./views/Ticket";
+import Logout from "./auths/Logout";
+import Login from "./auths/Login";
+import Signup from "./auths/Signup";
+import BookingOffice from "./views/BookingOffice";
+import Car from "./views/Car";
+import ParkingLot from "./views/ParkingLot";
+import Trip from "./views/Trip";
 import Nav from "./utils/Nav";
+import AddCar from "./creates/AddCar";
 
 const HomePage = () => {
 
@@ -20,20 +19,17 @@ const HomePage = () => {
             <Router>
                 <div className="Home">
                     <Nav/>
-                    <Grid container spacing={3}>
-                        <Grid item xs={3}>
-                            <Sidebar items={items}/>
-                        </Grid>
-                        <Grid item xs={8}>
+                    <Grid container>
+                        <Grid item xs={12}>
                             <Switch>
                                 <Route path='/login' component={Login} exact/>
                                 <Route path='/signup' component={Signup} exact/>
                                 <Route path='/logout' component={Logout} exact/>
-                                <Route path='/bookingoffices' component={BookingOffice}/>
+                                {/*<Route path='/bookingoffices' component={BookingOffice}/>*/}
                                 <Route path='/cars' component={Car}/>
-                                <Route path='/parkinglots' component={ParkingLot}/>
-                                <Route path='/tickets' component={Ticket}/>
-                                <Route path='/trips' component={Trip}/>
+                                {/*<Route path='/parkinglots' component={ParkingLot}/>*/}
+                                {/*<Route path='/tickets' component={Ticket}/>*/}
+                                {/*<Route path='/trips' component={Trip}/>*/}
                             </Switch>
                         </Grid>
                     </Grid>

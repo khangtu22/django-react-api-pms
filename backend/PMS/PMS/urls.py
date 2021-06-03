@@ -19,7 +19,7 @@ from rest_framework.schemas import get_schema_view
 from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
-from rest_framework_jwt.views import obtain_jwt_token
+from rest_framework_jwt.views import obtain_jwt_token, refresh_jwt_token, verify_jwt_token
 
 schema_view = get_schema_view(
     openapi.Info(
@@ -47,5 +47,8 @@ urlpatterns = [
         'swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('redoc/', schema_view.with_ui( # new
         'redoc', cache_timeout=0), name='schema-redoc'),
-    path('token-auth/', obtain_jwt_token)
+    path('token-auth/obtain', obtain_jwt_token),
+    path('token-auth/refresh', refresh_jwt_token),
+    path('token-auth/verify', verify_jwt_token),
+
 ]

@@ -4,9 +4,11 @@ from django.shortcuts import render
 from rest_framework import viewsets
 
 from cars.models import Car
+from cars.paginations import CustomPagination
 from cars.serializations import CarSerializer
 
 
 class CarView(viewsets.ModelViewSet):
-    queryset = Car.objects.all();
+    pagination_class = CustomPagination
+    queryset = Car.objects.all()
     serializer_class = CarSerializer

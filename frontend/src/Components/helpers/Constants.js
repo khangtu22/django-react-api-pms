@@ -42,4 +42,7 @@ const items = [
     },
 ]
 
+const recordPerPage = 10;
+
 export {items};
+export {recordPerPage};

@@ -55,7 +55,7 @@ const Login = () => {
             password: password
         };
 
-        fetch('http://localhost:8000/token-auth/', {
+        fetch('http://localhost:8000/token-auth/obtain', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

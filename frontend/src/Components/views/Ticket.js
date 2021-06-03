@@ -17,7 +17,6 @@ const useStyles = makeStyles({
 function Ticket() {
     const classes = useStyles();
     let [responseData, setResponseData] = React.useState('');
-    let mounted = true;
     useEffect(() => {
         fetch("http://localhost:8000/api/tickets/", {
             method: 'GET',
