@@ -10,8 +10,7 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
-import { Link } from 'react-router-dom';
-import Nav from "../utils/Nav";
+import {Link, useHistory} from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -39,9 +38,10 @@ const Login = () => {
     const [errors, setErrors] = useState(false);
     const [loading, setLoading] = useState(true);
     const classes = useStyles();
+    const history = useHistory();
     useEffect(() => {
         if (localStorage.getItem('token') !== null) {
-            this.props.history.push(`/trips`);
+            history.push(`/cars`);
         } else {
             setLoading(false);
         }
@@ -67,7 +67,7 @@ const Login = () => {
                 if (data.token) {
                     localStorage.clear();
                     localStorage.setItem('token', data.token);
-                    window.location.replace('http://localhost:3000/trips');
+                    window.location.replace('http://localhost:3000/cars');
                 } else {
                     setUserName('');
                     setPassword('');

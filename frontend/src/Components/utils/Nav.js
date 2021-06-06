@@ -7,7 +7,6 @@ import {
     DialogContent,
     DialogContentText,
     DialogTitle,
-    IconButton,
     Toolbar,
     Typography,
     useMediaQuery,
@@ -55,8 +54,6 @@ function Nav() {
         <div className={classes.navBar}>
             <AppBar position="static">
                 <Toolbar>
-                    <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-                    </IconButton>
                     <Typography variant="h6" className={classes.title}>
                         HOME
                     </Typography>
@@ -65,7 +62,7 @@ function Nav() {
                         {isAuth === true ? (
                             <Fragment>
                                 {' '}
-                                <Link to="/cars">
+                                <Link to="/cars"  >
                                     <Button type='button'>Car</Button>
                                 </Link>
                                 <Link to="/tickets">

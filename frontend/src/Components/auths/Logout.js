@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Fragment } from 'react';
+import  { useState, useEffect } from 'react';
 
 const Logout = () => {
   const [loading, setLoading] = useState(true);

@@ -5,12 +5,11 @@ import Ticket from "./views/Ticket";
 import Logout from "./auths/Logout";
 import Login from "./auths/Login";
 import Signup from "./auths/Signup";
-import BookingOffice from "./views/BookingOffice";
 import Car from "./views/Car";
-import ParkingLot from "./views/ParkingLot";
-import Trip from "./views/Trip";
 import Nav from "./utils/Nav";
-import AddCar from "./creates/AddCar";
+import Trip from "./views/Trip";
+import BookingOffice from "./views/BookingOffice";
+import ParkingLot from "./views/ParkingLot";
 
 const HomePage = () => {
 
@@ -25,11 +24,11 @@ const HomePage = () => {
                                 <Route path='/login' component={Login} exact/>
                                 <Route path='/signup' component={Signup} exact/>
                                 <Route path='/logout' component={Logout} exact/>
-                                {/*<Route path='/bookingoffices' component={BookingOffice}/>*/}
+                                <Route path='/bookingoffices' component={BookingOffice}/>
                                 <Route path='/cars' component={Car}/>
-                                {/*<Route path='/parkinglots' component={ParkingLot}/>*/}
-                                {/*<Route path='/tickets' component={Ticket}/>*/}
-                                {/*<Route path='/trips' component={Trip}/>*/}
+                                <Route path='/parkinglots' component={ParkingLot}/>
+                                <Route path='/tickets' component={Ticket}/>
+                                <Route path='/trips' component={Trip}/>
                             </Switch>
                         </Grid>
                     </Grid>
